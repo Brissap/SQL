@@ -1,0 +1,38 @@
+--Create a Makeup Must Haves Database
+
+CREATE TABLE Makeup ( Id INTEGER PRIMARY KEY, Name TEXT, Quantity INTEGER, Price INTEGER);
+INSERT into Makeup VALUES (1, "Primer",200,16.00);
+INSERT into Makeup VALUES (2, "Color Corrector",250,10.79);
+INSERT into Makeup VALUES (3, "Concealer",280,12.49);
+INSERT into Makeup VALUES (4, "Foundation",200,22.00);
+INSERT into Makeup VALUES (5, "Bronzer",300,13.89);
+INSERT into Makeup VALUES (6, "Blush",120,9.25);
+INSERT into Makeup VALUES (7, "Highlighter",280,11.99);
+INSERT into Makeup VALUES (8, "Setting Spray",360,12.89);
+INSERT into Makeup VALUES (9, "Setting Powder",240,12.99);
+INSERT into makeup VALUES (10, "Brushes", 500,14.00);
+INSERT into makeup VALUES (11, "Beauty Blender",320,5.50);
+ 
+
+--Display the database ordered by price.
+SELECT * 
+FROM Makeup
+ORDER BY price;
+
+
+
+--What is the total quantity of products as a whole?
+SELECT sum(quantity) FROM Makeup;
+
+
+--What is the Lowest and hightest priced items as well as the average?
+SELECT Min(price) FROM Makeup;
+SELECT Max(price) FROM Makeup;
+SELECT Avg(price) FROM Makeup;
+
+SELECT * 
+FROM Makeup
+ORDER BY name asc;
+
+
+
