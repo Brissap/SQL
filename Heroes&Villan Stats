@@ -50,11 +50,18 @@ INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA
 
 SELECT * FROM marvels;
 
+--Max and Min values for energy projection.
+
 SELECT name, max(energy_Projection)
 FROM marvels;
 
 SELECT name, min(energy_Projection) 
 FROM marvels;
+
+
+
+
+--Max and Min values for Fighting Skills.
 
 SELECT name, min(fighting_skills) 
 FROM marvels;
@@ -62,27 +69,40 @@ FROM marvels;
 SELECT name, max(fighting_skills) 
 FROM marvels;
 
+
+
+
+--Who are the most Popular Heros and Villans with a rate Over 50?
+
 SELECT * FROM marvels 
 WHERE popularity >50 ORDER BY popularity;
 
+
+
+
+--USA VS EUA (HEROES & VILLANS)
 SELECT * FROM marvels 
 WHERE hometown = "USA" AND fighting_skills > 3 ORDER BY popularity ;
-
 
 SELECT * FROM marvels 
 WHERE hometown = "EUA" AND fighting_skills > 3 ORDER BY popularity;
 
+
+
+--Average Power and Combat skills From the Heros & Villans
 
 SELECT name, avg(energy_Projection) AS Power  FROM marvels GROUP BY name HAVING Power >= 4;
 
 SELECT name, avg(fighting_skills) AS Combat  FROM marvels GROUP BY name HAVING Combat >= 4;
 
 
+
+--Looking at Durability, Strenght and Speed higher than 5 between Heros and Villans
 SELECT name,alignment FROM marvels 
 WHERE durability >5 OR strength >5 OR speed >5 ORDER BY alignment;
 
 
-
+--What are the Grouped Qualifications of Popularity for each Hero & Villan?
 SELECT name, popularity,
     CASE
         WHEN popularity >=50 THEN "Super"
