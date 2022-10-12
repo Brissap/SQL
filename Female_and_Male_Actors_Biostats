@@ -1,0 +1,105 @@
+CREATE TABLE Female_Actors
+(id integer primary key,
+full_name TEXT,
+acting_debut TEXT,
+marital_status TEXT,
+movie TEXT); 
+
+
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("101","Florence Pugh","2014","Single","In the Time It Takes to Get There");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("102","Emily Blunt","2001","Married","A Quiet Place");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("103","Kristen Bell","2001","Married","Hit and Run");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("104","Melissa McCarthy","2000","Married","Bridesmaids");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("105","Melissa McCarthy","2000","Married","Tammy");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("106","Angelina Jolie","1982","Single","Mr. and Mrs. Smith");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("107","Leslie Mann","1991","Married","The Cable Guy");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("108","Maya ManRudolph","2006","Married","Inherent Vice");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("109","Nicole Kidman","1983","Married","Eyes Wide Shut");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("110","Jada Pinkett","1991","Married","Ali");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("111","Jennifer Lopez","1986","Married","Selena");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("112","Jenna Dewan","2004","Single","Step Up");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("113","Winona Ryder","1986","Single","Beetlejuice");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("114","Blake Lively","1998","Married","Green Lantern");
+INSERT INTO Female_Actors(id,full_name,acting_debut,marital_status,movie) 
+VALUES("115","Rachel McAdams","2001","Married","The Notebook");
+
+CREATE TABLE Male_Actors
+(id integer primary key,
+name TEXT,
+acting_debut TEXT,
+marital_status TEXT,
+movie_title TEXT); 
+
+
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("101", "Zach Braff","1989","Single","In the Time It Takes to Get There"); 
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("102","John Krasinski","2002","Married","A Quiet Place");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("103","Dax Shepard","2004","Married","Hit and Run");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("104","Ben Falcone","2001","Married","Tammy");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("105","Brad Pitt","1987","Single","Mr. and Mrs. Smith");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("106","Leonardo DiCaprio","1991","Single","Critters 3");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("107","Paul Anderson","1996","Married","Inherent Vice");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("108","Tom Cruise","1981","Single","Eyes Wide Shut");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("109","Will Smith","1986","Married","Ali");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("110","Marc Anthony","1991","Single","East Side Story");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("111","Channing Tatum","2005","Single","Coach Carter");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("112","Chriss Pratt","2000","Married","Jurassic World");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("113","Johnny Depp","1984","Single","A Nightmare on Elm Street");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("114","Ryan Reynolds","1991","Married","Deadpool");
+INSERT INTO Male_Actors (id,name,acting_debut,marital_status,movie_title)
+VALUES("115","Ryan Gosling","2001","Married","The Notebook");
+
+SELECT female.full_name,female.acting_debut,Male.name,Male.acting_debut
+FROM Female_actors as female 
+JOIN Male_actors as male
+ON female.id=male.id; 
+
+SELECT female.full_name,female.movie,Male.name,male.movie_title
+FROM Female_actors as female 
+JOIN Male_actors as male
+ON female.id=male.id;
+
+SELECT female.full_name,female.marital_status,Male.name,male.marital_status
+FROM Female_actors as female 
+JOIN Male_actors as male
+ON female.id=male.id;
+
+SELECT female.full_name,female.marital_status,Male.name,male.marital_status
+FROM Female_actors as female 
+JOIN Male_actors as male
+ON female.id=male.id
+WHERE female.marital_status = "Married" AND male.marital_status = "Married";
+
+
+SELECT female.full_name,female.marital_status,Male.name,male.marital_status
+FROM Female_actors as female 
+JOIN Male_actors as male
+ON female.id=male.id
+WHERE female.marital_status = "Single" AND male.marital_status = "Single";
