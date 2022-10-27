@@ -45,9 +45,9 @@ artist_name
 FROM BIT_DB.spotifydata
 GROUP BY artist_name, track_name
 
---#Then I determined who the Top 10 artists are by popularity
-SELECT track_name, artist_name, popularity
-FROM BIT_DB.spotifydata
-ORDER BY popularity desc
-LIMIT 10
+--#Then I determined who the Top 15 artists are by popularity
+SELECT artist_name, track_name, popularity
+FROM BIT_DB.Spotifydata
+ORDER BY popularity 
+LIMIT 15 
 
