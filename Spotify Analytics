@@ -31,23 +31,19 @@ time_signature integer NOT NULL
 
 #Next, I explored the data using the following SQL. 
 
-
-
 SELECT * FROM BIT_DB.Spotifydata
 
---#First I determined the avg popularity, danceability, and energy by artist and track. 
-SELECT
-artist_name
-,track_name
-,avg(popularity)
-,avg(danceability)
-,avg(energy)
-FROM BIT_DB.spotifydata
-GROUP BY artist_name, track_name
+
+
+
+--#What's the average danceability for the 10 most popular songs?
+
+
+
 
 --#Who the Top 15 artists are by popularity?
 SELECT artist_name, track_name, popularity
 FROM BIT_DB.Spotifydata
-ORDER BY popularity 
+ORDER BY popularity desc
 LIMIT 15 
 
