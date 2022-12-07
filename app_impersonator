@@ -1,0 +1,33 @@
+/*Think about your favorite apps, and pick one that stores your data- like a game 
+that stores scores, an app that lets you post updates, etc. 
+Now in this project, you're going to imagine that the app stores your data 
+in a SQL database (which is pretty likely!), and write SQL statements 
+that might look like their own SQL.
+CREATE a table to store the data.
+INSERT a few example rows in the table.
+Use an UPDATE to emulate what happens when you edit data in the app.
+Use a DELETE to emulate what happens when you delete data in the app.*/
+
+
+
+
+
+CREATE TABLE drink_water_reminder (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    day TEXT,
+    drink_type TEXT,
+    liquid_oz TEXT);
+
+INSERT INTO drink_water_reminder (day,drink_type, liquid_oz) VALUES ("Monday","Water", "24");
+INSERT INTO drink_water_reminder (day,drink_type, liquid_oz) VALUES ("Tuesday","Water","16");
+INSERT INTO drink_water_reminder (day,drink_type, liquid_oz) VALUES ("Wednesday","Tea", "12");
+INSERT INTO drink_water_reminder (day,drink_type, liquid_oz) VALUES ("Thursday", "Juice","12");
+INSERT INTO drink_water_reminder (day,drink_type, liquid_oz) VALUES ("Friday","Water","18");
+
+UPDATE drink_water_reminder set drink_type = "Coffee"
+WHERE id = 3;
+
+DELETE FROM drink_water_reminder 
+WHERE id = 4;
+
+SELECT * FROM drink_water_reminder;
