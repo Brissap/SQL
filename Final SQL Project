@@ -102,3 +102,16 @@ JOIN artists AS art ON alb.artistid=art.artistid;
 
 
 
+--12.Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+
+SELECT alb.title as 'Album Name', tra.name as 'Track Name', med.name as 'Media Type', gen.name as 'Genre'
+FROM tracks AS tra
+JOIN albums AS alb ON tra.albumid = alb.albumid
+JOIN media_types AS med ON tra.mediatypeid = med.mediatypeid
+JOIN genres AS gen ON gen.genreid = tra.genreid;
+
+
+
+
+
+
