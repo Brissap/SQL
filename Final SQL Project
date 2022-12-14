@@ -112,6 +112,26 @@ JOIN genres AS gen ON gen.genreid = tra.genreid;
 
 
 
+--13.Show the total sales made by each sales agent.
+
+SELECT emp.firstname, emp.lastname, sum(inv.total) as 'Total Sales'
+FROM employees  emp
+JOIN customers  cust ON cust.SupportRepId = emp.EmployeeId
+JOIN invoices  inv ON Inv.CustomerId = cust.CustomerId
+GROUP BY emp.firstname;
+
+
+--14.Which sales agent made the most dollars in sales in 2009?
+
+SELECT emp.firstname, emp.lastname, sum(inv.total) as 'Total Sales'
+FROM employees  emp
+JOIN customers  cust ON cust.SupportRepId = emp.EmployeeId
+JOIN invoices  inv ON Inv.CustomerId = cust.CustomerId
+WHERE inv.invoicedate LIKE '%2009%'
+GROUP BY emp.FirstName
+ORDER BY sum(inv.total) desc Limit 1;
+
+
 
 
 
